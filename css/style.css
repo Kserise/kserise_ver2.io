@@ -256,11 +256,32 @@
     transform:translateY(-10%);
 }
 
-.donut1 .bg-particle, .bg-particle2 {
+
+
+/* bg-particle */
+
+
+.bg-particle, .bg-particle2 {
     position:absolute; z-index:-1;
     opacity:0.3;
     border-radius:50%;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
 }
+.bg-particle:before {
+    content:"";
+    position:fixed; z-index:1;
+    border-radius:50%;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+}
+
+.bg-particle:after {
+    content:"";
+    position:fixed; z-index:1;
+    border-radius:50%;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+}
+
+
 .donut1 .bg-particle {
     width:300px;
     height:300px;
@@ -269,26 +290,18 @@
     background:#E8B3A1;
 }
 .donut1 .bg-particle:before {
-    content:"";
-    position:fixed; z-index:1;
     right:30%;
     top:20%;
     width:200px;
     height:200px;
     background:#B07175;
-    opacity:1;
-    border-radius:50%;
 }
 .donut1 .bg-particle:after {
-    content:"";
-    position:fixed; z-index:1;
     left:20%;
     top:15%;
     width:100px;
     height:100px;
     background:#FFE6D6;
-    opacity:1;
-    border-radius:50%;
 }
 .donut1 .bg-particle2 {
     left:-300px;
@@ -300,11 +313,6 @@
 
 
 
-.donut2 .bg-particle, .bg-particle2 {
-    position:absolute; z-index:-1;
-    opacity:0.3;
-    border-radius:50%;
-}
 .donut2 .bg-particle {
     width:300px;
     height:300px;
@@ -313,34 +321,63 @@
     background:#FFE3F1;
 }
 .donut2 .bg-particle:before {
-    content:"";
-    position:fixed; z-index:1;
-    right:30%;
-    top:20%;
-    width:200px;
-    height:200px;
+    right:40%;
+    top:25%;
+    width:100px;
+    height:100px;
     background:#FFE3F1;
-    opacity:1;
-    border-radius:50%;
 }
+
 .donut2 .bg-particle:after {
-    content:"";
-    position:fixed; z-index:1;
     left:20%;
     top:15%;
     width:100px;
     height:100px;
     background:#FFE3F1;
-    opacity:1;
-    border-radius:50%;
 }
 .donut2 .bg-particle2 {
-    right:0px;
+    right:-300px;
+    bottom:10%;
+    width:800px;
+    height:800px;
+    background:#FFE3F1;
+}
+
+
+
+.donut3 .bg-particle {
+    width:300px;
+    height:300px;
+    left:30%;
+    top:50%;
+    background:#FFEDCB;
+}
+.donut3 .bg-particle:before {
+    right:30%;
+    top:20%;
+    width:200px;
+    height:200px;
+    background:#F4DED6;
+}
+.donut3 .bg-particle:after {
+    left:38%;
+    top:15%;
+    width:100px;
+    height:100px;
+    background:#FFC1B4;
+}
+.donut3 .bg-particle2 {
+    left:-300px;
     bottom:10%;
     width:1000px;
     height:1000px;
-    background:#FFE3F1;
+    background:#FFEDCB;
 }
+
+
+
+/* 도넛 애니메이션 */
+
 
 .animation {
     position:fixed;
