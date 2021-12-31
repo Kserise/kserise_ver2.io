@@ -1,27 +1,46 @@
 let doindex = 0;
+let width;
+
 $("#fullpage").fullpage({
     'onLeave': function (anchorLink, index) {
         if (index == 2){
-            var interval = setInterval(function(){
-                $(".docon").eq(doindex).addClass("active");
-                if(doindex < 2){
-                    doindex++;
-                }else {
-                    doindex = 0;
-                    clearInterval(interval);
-                }
-            }, 800)
+            width = $(window).width();
+            console.log(width);
+            if(width > 768){
+                var interval = setInterval(function(){
+                    $(".docon").eq(doindex).addClass("active");
+                    // console.log(doindex);
+                    if(doindex < 2){
+                        doindex++;
+                    }else {
+                        doindex = 0;
+                        clearInterval(interval);
+                    }
+                }, 800)
+            }else{
+                $(".docon").eq(0).addClass("active");
+                $(".docon").off('click').click(function(){
+                    if(doindex < 2){
+                        doindex++;
+                    }else {
+                        doindex = 0;
+                    }
+                    $(".docon").removeClass("active").eq(doindex).addClass("active");
+                });
+            }
         }else {
+            doindex = 0;
             $(".docon").removeClass("active");
         }
-
         if (index == 3) {
             $(".castle-con").addClass("active");
         }else {
             $(".castle-con").removeClass("active");
         }
-    }   
+    }
 });
+
+
 
 
 const donut = $(".clippath > div");
