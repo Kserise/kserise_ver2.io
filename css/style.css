@@ -428,7 +428,7 @@
     color:#fff;
 }
 
-.learn a {
+.learnbtn {
     display:flex;
     justify-content: center;
     align-items: center;
@@ -436,6 +436,9 @@
     height:50px;
     background:#fff;
     box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+}
+.learnbtn:hover {
+    box-shadow: 0 3px 4px rgba(0,0,0,0.15) inset;
 }
 /* 첫번째 초코 도넛 애니메이션 */
 
@@ -594,6 +597,237 @@
     margin-right:20px; 
 }
 
+
+
+
+
+
+/* sec3 궁전 */
+.scale-box {
+    max-width:1250px;
+    height:800px;
+    margin:0 auto;
+    overflow:hidden;
+    position:relative;
+}
+.castle-con {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    transition:1.5s;
+    transition-delay:0.5s;
+    perspective: 700;
+}
+.castle-con.active {
+    transform:scale(1.5);
+    top:-10%;
+}
+.castle {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.door {
+    position:absolute; z-index:999;
+    left:50%;
+    transform:translateX(-49%);
+    bottom:145px;
+    width:265px;
+    height:352px;
+    perspective:600px;
+}
+.door:before {
+    content:'';
+    position:absolute; z-index: -1;
+    left:5%;
+    top:7px;
+    width:90%;
+    height:98%;
+
+}
+.door > img {
+    width:100%;
+    height:100%;
+    position:absolute;
+    object-fit: cover;
+    transition:0.8s;
+    transition-delay: 1s;
+}
+.door > img:nth-child(1){
+    transform-origin: 5% center;
+}
+.door > img:nth-child(2){
+    transform-origin: 95% center;
+}
+.castle-con.active .door > img:nth-child(1) {
+    transform:rotate3d(0,1,0,-120deg) rotate3d(1,0,0,-3deg);
+}
+.castle-con.active .door > img:nth-child(2) {
+    transform:rotate3d(0,1,0,120deg) rotate3d(1,0,0,-3deg);
+}
+
+.docuts {
+    position: relative; z-index:-1;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.docuts > img {
+    position: absolute;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+.docuts > img:nth-child(8){
+    transform:translateY(-300px);
+}
+
+
+
+
+
+.castle-con.active .docuts > img:nth-child(1){
+    animation:bdo 1.3s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(2){
+    animation:bdo 1.4s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(3){
+    animation:maindo 1.2s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(4){
+    animation:bdo2 1.3s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(5){
+    animation:bdo 1.4s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(6){
+    animation:bdo 1.5s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(7){
+    animation:bdo2 1.6s 1.6s forwards;
+}
+.castle-con.active .docuts > img:nth-child(8){
+    animation:topdo 1.4s 1.3s forwards;
+}
+
+.docuts .learnbtn {
+    opacity:0;
+    position:absolute;
+    left:50%;
+    top:25%;
+    margin-left:-75px;
+    mix-blend-mode: soft-light;
+    background:#fff;
+}
+.castle-con.active .docuts .learnbtn {
+    opacity:1;
+    transition:0.8s;
+    transition-delay: 3s;
+}
+.docuts .learnbtn:before {
+    content:"";
+    position:absolute;
+    left:5%;
+    top:5%;
+    width:1%;
+    height:90%;
+    background:#FF6DB2;
+    mix-blend-mode: screen;
+    transition:1.5s;
+}
+
+.learnbtn:hover:before {
+    width:90%;
+}
+@keyframes maindo{
+    0% {
+        transform:translateY(0);
+    }
+    50% {
+        transform:translateY(15px);
+    }
+    75% {
+        transform:translateY(-5px);
+    }
+    100% {
+        transform:translateY(0px);
+    }
+}
+
+@keyframes topdo{
+    0% {
+        transform:translateY(-300px);
+    }
+    65% {
+        transform:translateY(170px);
+    }
+    100% {
+        transform:translateY(150px);
+    }
+}
+
+@keyframes bdo {
+    0% {
+        transform:translateY(0);
+    }
+    50% {
+        transform:translateY(15px);
+    }
+    75% {
+        transform:translateY(-5px);
+    }
+    100% {
+        transform:translateY(60px);
+    }
+}
+
+@keyframes bdo2 {
+    0% {
+        transform:translateY(0);
+    }
+    50% {
+        transform:translateY(15px);
+    }
+    75% {
+        transform:translateY(-5px);
+    }
+    100% {
+        transform:translateY(40px);
+    }
+}
+
+.docuts:before {
+    content: '';
+    position: absolute;
+    top:7px;
+    left:2.5%;
+    width:95%;
+    height: 100px;
+    background: url("../imgs/chocoheader.png") left center;
+    background-position-x: 0%;
+    background-position-y: 75%;
+    transition:15s;
+    animation:bg-ani 30s linear infinite alternate;
+}
+
+@keyframes bg-ani {
+    0%{
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 100%;
+    }
+}
+
+
+
+
 /* 도넛 애니메이션 */
 
 
@@ -604,6 +838,7 @@
     right:50px;
     bottom:50px;
 }
+
 .animation img {
     position:absolute;
     left:0;

@@ -14,8 +14,15 @@ $("#fullpage").fullpage({
         }else {
             $(".docon").removeClass("active");
         }
-    }
+
+        if (index == 3) {
+            $(".castle-con").addClass("active");
+        }else {
+            $(".castle-con").removeClass("active");
+        }
+    }   
 });
+
 
 const donut = $(".clippath > div");
 $(".donuts img").click(function(){
