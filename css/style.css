@@ -1268,14 +1268,14 @@ nav ul li a:hover .fa-circle-notch {
 
     .clippath > div h2 {
         font-family: 'Poppins', sans-serif;
-        font-size: 50px;
+        font-size: 40px;
         font-weight: 600;
         display: flex;
         flex-direction: column;
     }
 
     .clippath > div h2 .text {
-        margin-top: -30px;
+        margin-top: -25px;
     }
 
     .clippath > div p {
@@ -1315,7 +1315,7 @@ nav ul li a:hover .fa-circle-notch {
     /* contact us */
 
     .contect-container {
-        padding:100px 20px;
+        padding:0 20px;
     }
     .contect_us {
         width: 100%;
