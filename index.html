@@ -5,30 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="header">
         <h1><a href="#">Logo</a></h1>
-        <div class="toggle">
-            <ion-icon name="menu-outline"></ion-icon>
-        </div>
+        <div class="toggle"></div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Contect Us</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span class="text">Shop</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span class="text">Menu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span class="text">Contect Us</span>
+                    </a>
+                </li>
             </ul>
+            <div class="animation">
+                <img src="imgs/animation/1.png" alt="멀쩡">
+                <img src="imgs/animation/2.png" alt="한입">
+                <img src="imgs/animation/3.png" alt="두입">
+                <img src="imgs/animation/4.png" alt="세입">
+                <img src="imgs/animation/5.png" alt="네입">
+                <img src="imgs/animation/6.png" alt="꺼억">
+            </div>
         </nav>
     </div>
     <div id="fullpage">
         <div class="section sec1">
             <div class="clippath">
                 <div class="donut1">
-                    <div class="bg-particle"></div>
-                    <div class="bg-particle2"></div>
+                    <div id="do1_mmove1" class="bg-particle"></div>
+                    <div id="do1_mmove2" class="bg-particle2"></div>
                     <div class="textbox">
                         <h2>
                             <span class="ctext">Chocolate</span>
@@ -39,8 +66,8 @@
                     <div class="imgbox"></div>
                 </div>
                 <div class="donut2">
-                    <div class="bg-particle"></div>
-                    <div class="bg-particle2"></div>
+                    <div id="do2_mmove1" class="bg-particle"></div>
+                    <div id="do2_mmove2" class="bg-particle2"></div>
                     <div class="textbox">
                         <h2>
                             <span class="ctext">Strawberry</span>
@@ -51,8 +78,8 @@
                     <div class="imgbox"></div>
                 </div>
                 <div class="donut3">
-                    <div class="bg-particle"></div>
-                    <div class="bg-particle2"></div>
+                    <div id="do3_mmove1" class="bg-particle"></div>
+                    <div id="do3_mmove2" class="bg-particle2"></div>
                     <div class="textbox">
                         <h2>
                             <span class="ctext">WChocolate</span>
@@ -107,6 +134,9 @@
                         <a href="#" class="learnbtn">Learn More</a>
                     </div>
                 </div>
+                <div class="sec2bg">
+                    <div class="sec2bgc"></div>
+                </div>
             </div>
         </div>
         <div class="section sec3">
@@ -132,17 +162,34 @@
             </div>
         </div>
 
-        <div class="section sec4">4</div>
+        <div class="section sec4">
+            <div class="contect-container">
+                <div class="contect_us">
+                    <ul>
+                        <li>
+                            <input type="text" name="" required>
+                            <span>name</span>
+                        </li>
+                        <li>
+                            <input type="tel" name="" required>
+                            <span>tel</span>
+                        </li>
+                        <li>
+                            <input type="text" name="" required>
+                            <span>address</span>
+                        </li>
+                        <li>
+                            <textarea name="" required></textarea>
+                            <span>message here...</span>
+                        </li>
+                        <input type="submit" value="Send" class="learnbtn">
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <!--
-    <div class="animation">
-        <img src="imgs/animation/1.png" alt="멀쩡">
-        <img src="imgs/animation/2.png" alt="한입">
-        <img src="imgs/animation/3.png" alt="두입">
-        <img src="imgs/animation/4.png" alt="세입">
-        <img src="imgs/animation/5.png" alt="네입">
-        <img src="imgs/animation/6.png" alt="꺼억">
-    </div>
+
     -->
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

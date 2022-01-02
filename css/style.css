@@ -67,7 +67,19 @@
     }
 }
 
-
+/* section */
+#fullpage {
+    perspective:700px;
+}
+.section {
+    transform-origin:left center;
+    transform:rotate3d(0,1,0,0deg) translateX(0px);
+    transition:0.8s;
+    transition-delay: 0.4s;
+}
+.section.transform {
+    transform:rotate3d(0,1,0,2deg) translateX(-150px);
+}
 /* header */
 
 .header {
@@ -79,27 +91,117 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    perspective:600px;
 }
 .header h1 a{
     text-transform:uppercase;
 }
 .toggle {
+    position:relative; z-index:999;
     display:flex;
     justify-content: center;
     align-items: center;
     width:40px;
     height:40px;
     background:#fff;
-    font-size:30px;
+    font-size:25px;
     cursor:pointer;
     box-shadow:0 3px 4px rgba(0,0,0,0.15);
 }
-.toggle .ion-icon {
-    color:#333;
+.toggle:before{
+    content:"\f0c9";
+    font-family:"Font Awesome 5 Free";
+    font-weight: 600;
+}
+
+.toggle.active:before{
+    content:"\f00d";
+    font-family:"Font Awesome 5 Free";
+    font-weight: 600;
+    color:rgb(248, 44, 44);
 }
 nav {
-    display:none;
+    position: fixed;
+    right:-500px;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width:350px;
+    height:100vh;
+    padding:100px 0px;
+    background:#fff;
+    box-shadow:-1px 3px 4px rgba(0,0,0,0.15);
+    transform-origin:right center;
+    transform:rotate3d(0,1,0,45deg);
+    transition: 1s ease-in-out;
+    perspective: 900px;
+    opacity:0;
 }
+nav.active {
+    right:0px;
+    transform:rotate3d(0,1,0,-5deg);
+    opacity:1;
+}
+nav ul li a {
+    display:flex;
+    align-items: center;
+    height:60px;
+    font-size:20px;
+    font-weight:500;
+    padding-left:20px;
+}
+nav ul li a:hover {
+    background:#FFE3F1;
+}
+.fa-circle-notch {
+    font-size:16px;
+    opacity:0;
+    color:#666;
+    transform:translateX(-20px);
+    transition:0.3s;
+}
+
+nav ul li a .text {
+    margin-left:5px;
+    color:#666;
+    transform:translateX(-20px);
+    transition:0.3s;
+}
+
+nav ul li a:hover .text {
+    color:#333;
+    transform:translateX(0px);
+}
+
+nav ul li a:hover .fa-circle-notch {
+    opacity:1;
+    color:#333;
+    transform:translateX(0px);
+}
+
+
+/* 도넛 애니메이션 */
+
+
+.animation {
+    position:relative;
+    width:200px;
+    height:200px;
+    margin:0 auto;
+}
+
+.animation img {
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+
+
+
 
 /* sec1 */
 /* font-family: 'Poppins', sans-serif; */
@@ -296,7 +398,17 @@ nav {
 
 /* bg-particle */
 
-
+@keyframes bg-particle {
+    0%{
+        transform:scale(0.01);
+    }
+    70%{
+        transform:scale(1.2);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
 .bg-particle, .bg-particle2 {
     position:absolute; z-index:-1;
     opacity:0.3;
@@ -308,15 +420,22 @@ nav {
     position:fixed; z-index:1;
     border-radius:50%;
     box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+    transform:scale(0.01);
+    animation:bg-particle 0.8s ease-in 1.7s forwards;
 }
-
 .bg-particle:after {
     content:"";
     position:fixed; z-index:1;
     border-radius:50%;
     box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+    transform:scale(0.01);
+    animation:bg-particle 0.8s ease-out 1.6s forwards;
 }
 
+.bg-particle2 {
+    transform:scale(0.01);
+    animation:bg-particle 0.8s ease-out 0.8s forwards;
+}
 
 .donut1 .bg-particle {
     width:300px;
@@ -433,7 +552,6 @@ nav {
     height:100%;
     object-fit: cover;
 }
-
 .learn {
     width:100%;
     position:absolute;
@@ -632,10 +750,108 @@ nav {
     margin-right:20px; 
 }
 
+.docon.active:hover {
+    transition:0.4s;
+    transform:scale(1.05);
+}
 
+.sec2bg {
+    position:absolute; z-index:-1;
+    top:10%;
+    width:80%;
+    min-width:1200px;
+    height:80%;
+    margin:0 auto;
+    background:#fff;
+    overflow:hidden;
+    box-shadow: 0 3px 4px rgba(0,0,0,0.2);
+}
+.sec2bg.active:before {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    animation:sec2bg1 2s ease-in forwards 0.3s;
+}
 
+.sec2bg.active:after {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    animation:sec2bg2 2s ease-in forwards 0.3s;
+}
 
+.sec2bgc {
+    width:100%;
+    height:100%;
+}
+.sec2bgc:before {
+    content:'';
+    position:absolute;
+    left:11%;
+    top:8%;
+    width:1px;
+    height:1px;
+    border-radius:50%;
+    background:#FFC0ED;
+    opacity:0.5;
+}
+.sec2bgc:after {
+    content:'';
+    position:absolute; z-index:3;
+    right:11%;
+    bottom:15%;
+    width:1px;
+    height:1px;
+    background: #FFBDCF;
+    border-radius:50%;
+    opacity:0.5;
+}
 
+.sec2bg.active .sec2bgc:before {
+    width:220px;
+    height:220px;
+    transition:0.4s 2.5s;
+}
+.sec2bg.active .sec2bgc:after {
+    width:150px;
+    height:150px;
+    transition:0.4s 2.5s;
+}
+@keyframes sec2bg1 {
+    0%{
+        clip-path: circle(1px at center 0%);
+        background:#FFC0ED;
+    }
+    50%{
+        clip-path: circle(100px at center 50%);
+        background:#FFC0ED;
+    }
+    100%{
+        clip-path: circle(450px at left 105%);
+        background:#FFC0ED;
+    }
+}
+
+@keyframes sec2bg2 {
+    0%{
+        clip-path: circle(1px at center 100%);
+        background: #FFBDCF;
+    }
+    50%{
+        clip-path: circle(100px at center 50%);
+        background: #FFBDCF;
+    }
+    100%{
+        clip-path: circle(300px at right -5%);
+        background: #FFBDCF;
+    }
+}
 
 /* sec3 궁전 */
 .scale-box {
@@ -861,38 +1077,140 @@ nav {
 }
 
 
-
-
-/* 도넛 애니메이션 */
-
-
-.animation {
-    position:fixed;
-    width:200px;
-    height: 200px;
-    right:50px;
-    bottom:50px;
+.contect-container {
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.animation img {
+.contect-container:before {
+    content:"";
+    position:absolute;
+    bottom:0;
+    width:100%;
+    min-width:1600px;
+    height:300px;
+    margin:0 auto;
+    background:url("../imgs/5918874.png") no-repeat top;
+    background-size:50%;
+}
+.contect-container:after {
+    content:"";
+    position:absolute; z-index: -1;
+    top:calc(50%-100px);
+    width:100%;
+    min-width:1400px;
+    height:200px;
+    margin:0 auto;
+    background:linear-gradient(to right, transparent, #FFBDCF, transparent);
+    opacity:1;
+}
+.contect_us {
+    position:relative;
+    width:800px;
+    height:500px;
+    background:#fff;
+    padding:70px 50px 0 200px;
+    box-shadow:0 1px 4px rgba(0,0,0,0.5);
+}
+.contect_us:after {
+    content:"";
+    position:absolute;
+    left:-175px;
+    top:50px;
+    width:350px;
+    height:400px;
+    background:url("../imgs/contact.png") no-repeat center #fff;
+    background-size:90% 90%;
+    box-shadow:0 3px 4px rgba(0,0,0,0.5);
+    transform:rotate(-5deg);
+}
+.contect_us:before {
+    content:"";
+    position:absolute;
+    right:-35px;
+    bottom:-50px;
+    width:150px;
+    height:200px;
+    background:url("../imgs/lovely-fashionable-teenage-girl-holds-glazed-sweet-doughnuts-eyes-keeps-lips-rounded.png") no-repeat center #fff;
+    background-size:90% 90%;
+    box-shadow:0 3px 4px rgba(0,0,0,0.5);
+    transform:rotate(5deg);
+}
+.contect_us ul {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+}
+.contect_us ul li {
+    position: relative;
+}
+.contect_us ul li:nth-child(1),
+.contect_us ul li:nth-child(2){
+    width:47%;
+}
+.contect_us ul li:nth-child(3),
+.contect_us ul li:nth-child(4){
+    width:100%;
+}
+.contect_us ul li input, 
+.contect_us ul li textarea {
+    width:100%;
+    margin-bottom:50px;
+    border:none;
+    border-bottom:1px solid #777;
+}
+.contect_us ul li textarea {
+    min-height:100px;
+    resize:none;
+}
+.contect_us ul li span {
     position:absolute;
     left:0;
     top:0;
-    width:100%;
-    height:100%;
-    object-fit: cover;
+    font-size:18px;
+    font-weight: 400;
+    text-transform:capitalize;
+    transition:0.3s;
+    pointer-events: none;
+}
+.contect_us ul > input {
+    margin:0 auto;
+    padding:10px 20px;
+    font-size:20px;
+    font-weight: 300;
+    border:none;
+    cursor:pointer;
+}
+.contect_us ul li input:focus ~span,
+.contect_us ul li textarea:focus ~span{
+    font-size:14px;
+    color:red;
+    transform:translateY(-25px);
 }
 
+.contect_us ul li input:valid ~span,
+.contect_us ul li textarea:valid ~span {
+    font-size:14px;
+    color:green;
+    transform:translateY(-25px);
+}
 
-
-
-
-
-
-
-
-
-
+.contect_us ul li span:before,
+.contect_us ul li span:before {
+    content:"\f00c";
+    font-family:"Font Awesome 5 Free";
+    font-weight: 600;
+    position:absolute;
+    right:-20px;
+    opacity:0;
+    transition:0.3s;
+}
+.contect_us ul li input:valid ~span:before,
+.contect_us ul li textarea:valid ~span:before {
+    opacity:1;
+}
 
 @media screen and (max-width:768px){
 
@@ -927,6 +1245,13 @@ nav {
     }
     .donut3:before {
         clip-path: circle(300px at right 90%);    
+    }
+
+
+
+    .imgbox {
+        min-width: 270px;
+        min-height: 360px;
     }
 
     .textbox {
@@ -972,8 +1297,9 @@ nav {
     .contents .docon {
         position: absolute;
         cursor:pointer;
+        min-width: 270px;
+        height: 450px;
     }
-
     /* sec3 */
 
     .scale-box {
@@ -984,5 +1310,39 @@ nav {
         bottom: 107px;
         width: 200px;
         height: 267px;
+    }
+
+    /* contact us */
+
+    .contect-container {
+        padding:100px 20px;
+    }
+    .contect_us {
+        width: 100%;
+        height: 500px;
+        background: #fff;
+        padding: 70px 20px;
+        box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    }
+    .contect_us:before {
+        right: -15px;
+        bottom: -30px;
+        width: 80px;
+        height: 130px;
+    }
+    .contect_us:after {
+        left: -20px;
+        top:auto;
+        bottom: -20px;
+        width: 100px;
+        height: 150px;
+    }
+
+    .contect_us ul li:nth-child(1), .contect_us ul li:nth-child(2) {
+        width: 100%;
+    }
+
+    .contect_us ul li input, .contect_us ul li textarea {
+        margin-bottom: 30px;
     }
 }
