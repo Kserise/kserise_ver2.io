@@ -545,6 +545,15 @@ nav ul li a:hover .fa-circle-notch {
     background:#999;
     margin:10px;
     overflow:hidden;
+    transition:0.4s;
+    opacity:0;
+    perspective: 700px;
+    transform:translateY(-50px);
+}
+
+.docon.active {
+transform:translateY(0);
+opacity:1;
 }
 .docon img {
     position:absolute;
@@ -597,14 +606,8 @@ nav ul li a:hover .fa-circle-notch {
 
 .docon:nth-child(1) {
     background:#FFE8D2;
-    transform:translateY(-50px);
-    transition:0.4s;
-    opacity:0;
 }
-.docon:nth-child(1).active {
-    transform:translateY(0);
-    opacity:1;
-}
+
 .docon:nth-child(1):before {
     content:"";
     position:absolute; left:-250px; top:-500px;
@@ -641,13 +644,6 @@ nav ul li a:hover .fa-circle-notch {
 
 .docon:nth-child(2) {
     background:#FF6DB2;
-    transform:translateY(-50px);
-    transition:0.4s;
-    opacity:0;
-}
-.docon:nth-child(2).active {
-    transform:translateY(0);
-    opacity:1;
 }
 
 .docon:nth-child(2) .learn {
@@ -691,14 +687,8 @@ nav ul li a:hover .fa-circle-notch {
 
 .docon:nth-child(3) {
     background:#F29366;
-    transform:translateY(-50px);
-    transition:0.4s;
-    opacity:0;
 }
-.docon:nth-child(3).active {
-    transform:translateY(0);
-    opacity:1;
-}
+
 .docon:nth-child(3):before {
     content:"";
     position:absolute;
@@ -754,7 +744,7 @@ nav ul li a:hover .fa-circle-notch {
     transition:0.4s;
     transform:scale(1.05);
 }
-
+/* sec2bg */
 .sec2bg {
     position:absolute; z-index:-1;
     top:10%;
@@ -823,6 +813,7 @@ nav ul li a:hover .fa-circle-notch {
     height:150px;
     transition:0.4s 2.5s;
 }
+
 @keyframes sec2bg1 {
     0%{
         clip-path: circle(1px at center 0%);
@@ -852,6 +843,7 @@ nav ul li a:hover .fa-circle-notch {
         background: #FFBDCF;
     }
 }
+
 
 /* sec3 궁전 */
 .scale-box {
