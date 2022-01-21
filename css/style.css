@@ -1213,6 +1213,10 @@ opacity:1;
         padding: 10px 30px;
     }
 
+    nav {
+        width: 200px;
+    }
+
     .clippath > div {
         padding:100px 30px;
         justify-content: center;
@@ -1291,6 +1295,10 @@ opacity:1;
         cursor:pointer;
         min-width: 270px;
         height: 450px;
+    }
+
+    .sec2bg {
+        box-shadow:none;
     }
     /* sec3 */
 
