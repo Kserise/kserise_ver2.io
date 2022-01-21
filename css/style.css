@@ -1167,7 +1167,7 @@ opacity:1;
     transition:0.3s;
     pointer-events: none;
 }
-.contect_us ul > input {
+.contect_us > input {
     margin:0 auto;
     padding:10px 20px;
     font-size:20px;
