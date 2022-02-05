@@ -45,9 +45,8 @@ let donutList = [];
 
 function deleteDonut(event){
     const div = event.target.parentElement;
-    const donut = div.parentElement;
-    donut.remove();
-    donutList = donutList.filter((item) => item.id !== parseInt(donut.id)); // 이미 부모요소에 id값을 부여했기때문에 매개변수로 id값을 받아올 필요가 없다 이말이야..
+    div.remove();
+    donutList = donutList.filter((item) => item.id !== parseInt(div.id)); // 이미 부모요소에 id값을 부여했기때문에 매개변수로 id값을 받아올 필요가 없다 이말이야..
     saveDonutList();
 }
 
@@ -100,11 +99,11 @@ function paintDonut(donut){
     faCartPlus.classList.add("fa-cart-plus");
 
     const deleteBtn = document.createElement("div");
-    deleteBtn.id = "close";
+    deleteBtn.classList.add("donut_close");
+    deleteBtn.addEventListener("click", deleteDonut);
     const close_Outline = document.createElement("ion-icon");
     close_Outline.name = "close-outline";
     deleteBtn.appendChild(close_Outline);
-    deleteBtn.addEventListener("click", deleteDonut);
     
     imgbox.appendChild(basicDonutImg);
     imgbox.appendChild(coverDonutImg);

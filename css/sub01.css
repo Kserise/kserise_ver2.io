@@ -343,14 +343,15 @@ a.addtocart:hover .fa-cart-plus {
     color:rgb(252, 129, 150);
 }
 
-#close {
+.donut_close {
     position:absolute;
     right:1px;
     top:3px;
     cursor:pointer;
 }
-#close ion-icon {
+.donut_close ion-icon {
     font-size:20px;
+    pointer-events: none;
 }
 
 /* discount */
