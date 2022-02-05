@@ -204,6 +204,7 @@ nav {
 }
 
 .items {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -342,7 +343,15 @@ a.addtocart:hover .fa-cart-plus {
     color:rgb(252, 129, 150);
 }
 
-
+#close {
+    position:absolute;
+    right:1px;
+    top:3px;
+    cursor:pointer;
+}
+#close ion-icon {
+    font-size:20px;
+}
 
 /* discount */
 
@@ -377,4 +386,126 @@ a.addtocart:hover .fa-cart-plus {
 
 .items.discount > a {
     border:2px solid rgb(107, 176, 255);
+}
+
+
+.modal_bg {
+    position:fixed;
+    left:0;
+    top:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.3);
+}
+
+.modal {
+    position:absolute;
+    width:500px;
+    padding:30px; 
+    background:#fff;
+    border-radius:25px;
+    box-shadow:0 3px 4px rgba(0,0,0,0.3);
+}
+.modal h3 {
+    font-size:28px;
+}
+.modal h3 span {
+    color:#06f;
+}
+
+#addForm {
+    margin-top:30px;
+}
+#addForm > ul > li {
+    margin:10px 0;
+}
+#addForm input {
+    outline:none;
+    border:none;
+    border-bottom:1px solid #333;
+}
+
+.Product_Image {
+    display:flex;
+    flex-wrap:wrap;
+}
+.Product_Image > span {
+    margin-bottom:10px;
+}
+.Product_Image ul {
+    display:flex;
+    justify-content:flex-start;
+}
+
+.hidden {
+    display:none;
+}
+
+.base_donuts, .donut_cover ul li {
+    position:relative;
+    width:24%;
+    margin:5px;
+    box-shadow:0 3px 4px rgba(0,0,0,0.3);
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.base_donuts img {
+    width:100%;
+    cursor:pointer;
+}
+
+.donut_cover {
+    position:relative;
+    width:100%;
+}
+
+.donut_cover ul li {
+    width:24%;
+    margin-right:5px;
+}
+
+.donut_cover ul li img {
+    width:100%;
+    cursor:pointer;
+}
+
+/*///////////// active //////////////*/
+
+.base_donuts.active, .donut_cover ul li.active {
+    background:rgba(0,0,0,0.3);
+} 
+
+/*////////////////////////*/
+
+
+#Addpd {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:30px 0 0 0 !important;
+}
+
+#Addpd input {
+    padding:10px 25px;
+    background:#06f;
+    color:#fff;
+    font-size:24px;
+    font-weight: 600;
+    border:none;
+    border-radius: 25px;
+    cursor:pointer;
+}
+
+.close {
+    position:absolute;
+    right:30px;
+    top:30px;
+    cursor:pointer;
+}
+.close ion-icon {
+    font-size:30px;
 }
