@@ -441,7 +441,8 @@ a.addtocart:hover .fa-cart-plus {
 }
 
 .hidden {
-    display:none;
+    position:absolute;
+    opacity:0;
 }
 
 .base_donuts, .donut_cover ul li {
