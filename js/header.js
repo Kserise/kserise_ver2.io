@@ -1,20 +1,23 @@
 let body = true;
 const HEADER_ACTIVE = "active";
-$(".toggle").click(function(){
+const title = document.title;
+console.log(title);
+$(".toggle").click(function(e){
     $(".toggle").toggleClass(HEADER_ACTIVE);
     $(".header > nav").toggleClass(HEADER_ACTIVE);
     $(".header").toggleClass(HEADER_ACTIVE);
     $(".section").toggleClass("transform");
-    if(body == true){
-        body = false;
-        $("body").on('scroll touchmove mousewheel', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            console.log(event);
-        });
-    }else {
-        body = true;
-        $("body").off('scroll touchmove mousewheel');
+    if(title === "MainDonut"){
+        if(body == true){
+            body = false;
+            $("body").on('scroll touchmove mousewheel', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+            });
+        }else {
+            body = true;
+            $("body").off('scroll touchmove mousewheel');
+        }
     }
 });
 

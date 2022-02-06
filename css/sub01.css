@@ -182,7 +182,11 @@ section {
 }
 .product h2 {
     font-size:30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
+
 .product h2 span {
     color:#36f;
 }
@@ -592,13 +596,41 @@ a.addtocart:hover .fa-cart-plus {
 
     #addForm > ul > li {
         display: flex;
+        width:100%;
+    }
+    #addForm > ul > li:nth-child(2) {
+        flex-wrap:wrap;
+    }
+
+    #addForm > ul > li:nth-child(2) label{
+        white-space: nowrap;
     }
 
     #addForm > ul > li > span {
         white-space: nowrap;
     }
 
-    #addForm > ul > li:nth-child(2) label{
-        white-space: nowrap;
+    #addForm > ul > li input {
+        width:100%;
     }
+
+    #addForm > ul > li:nth-child(2) > span{
+        width:100%;
+    }
+
+    #addForm > ul > li:nth-child(2) label {
+        font-size:14px;
+    }
+
+    #addForm > ul > li:nth-child(2) input {
+        width:auto;
+    }
+
+
+    .close {
+        right:15px;
+        top:15px;
+
+    }
+
 }

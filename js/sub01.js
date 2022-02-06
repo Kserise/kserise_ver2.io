@@ -12,10 +12,14 @@ $(".submenu > li").click(function(e){
 });
 
 
-function removeHeaderClass(){
+function removeHeaderClass(on){
     $(".header > nav").removeClass(SUB01_ACTIVE);
     $(".toggle").removeClass(HEADER_ACTIVE);
-    $(".header").toggleClass("detail");
+    if(on === "on"){
+        $(".header").addClass("detail");
+    }else {
+        $(".header").removeClass("detail");
+    }
 }
 
 let touchStartX, touchEndX;
@@ -28,7 +32,7 @@ detailBox.on("touchend", function(e){
     touchEndX = e.originalEvent.changedTouches[0].clientX;
     if(50 < (touchEndX-touchStartX)){
         $("#detailBox").addClass(SUB01_ACTIVE);
-        removeHeaderClass();
+        removeHeaderClass("on");
     }
     if(50 < (touchStartX-touchEndX)){
         $("#detailBox").removeClass(SUB01_ACTIVE);

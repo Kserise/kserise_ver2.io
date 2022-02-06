@@ -28,7 +28,7 @@ $(".modal_bg").hide();
 $("#addbtn").click(function(e){
     e.preventDefault();
     $(".modal_bg").show();
-    removeHeaderClass();
+    removeHeaderClass("on");
 });
 
 $(".close").click(function(){
