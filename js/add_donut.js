@@ -23,13 +23,17 @@ donut_cover_li.click(function(){
     $(this).addClass(ACTIVE_CLASS);
 });
 
+$(".modal_bg").hide();
+
 $("#addbtn").click(function(e){
     e.preventDefault();
     $(".modal_bg").show();
+    removeHeaderClass();
 });
 
 $(".close").click(function(){
     $(".modal_bg").hide();
+    removeHeaderClass();
 });
 
 
@@ -100,7 +104,7 @@ function paintDonut(donut){
 
     const deleteBtn = document.createElement("div");
     deleteBtn.classList.add("donut_close");
-    deleteBtn.addEventListener("click", deleteDonut);
+    deleteBtn.addEventListener("click", deleteDonut); // 자식요소한테까지 이벤트가 부여되서 css로 자식요소에 pointer-events:none;을 부여해서 해결한다.
     const close_Outline = document.createElement("ion-icon");
     close_Outline.name = "close-outline";
     deleteBtn.appendChild(close_Outline);

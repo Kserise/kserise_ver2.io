@@ -17,7 +17,7 @@ section {
 }
 
 /* 사이드메뉴 */
-nav {
+#detailBox {
     width:300px;
     min-width:300px;
     background:rgb(79, 189, 204);
@@ -165,7 +165,8 @@ nav {
 .navimg .addtocart {
     align-self: flex-end;
 }
-/* 아이템즈 */
+/* wrap */
+
 .wrap {
     width:1400px;
     display:flex;
@@ -195,13 +196,29 @@ nav {
     background:#fff;
     border:2px solid rgb(252, 129, 150);
     border-radius: 20px;
-    font-weight: 500;
-    color:rgb(252, 129, 150);
 }
 .pro-tab a:hover {
     background:rgb(252, 129, 150);
     color:#fff;
 }
+.pro-tab a span.text, .pro-tab a span.icon ion-icon{
+    font-weight: 500;
+    color:rgb(252, 129, 150);
+}
+
+.pro-tab a span.icon {
+    display:none;
+}
+
+.pro-tab a span.icon ion-icon {
+    font-size:26px;
+    font-weight:900;
+}
+
+.pro-tab a:hover span.text, .pro-tab a:hover span.icon ion-icon{
+    color:#fff;
+}
+/* items */
 
 .items {
     position: relative;
@@ -510,4 +527,78 @@ a.addtocart:hover .fa-cart-plus {
 }
 .close ion-icon {
     font-size:30px;
+}
+
+@media screen and (max-width:768px){
+    section {
+        margin-top:50px;
+    }
+
+    #detailBox {
+        min-width:100%;
+        height:100vh;
+        position:fixed; z-index:2;
+        left:-90%;
+        top:0;
+        transition:0.4s;
+        overflow:scroll;
+        opacity:0;
+    }
+    #detailBox.active {
+        left:0;
+        opacity:1;
+    }
+
+    .navimg {
+        display:none;
+    }
+
+    .wrap {
+        width:100%;
+        justify-content: center;
+    }
+
+    .product {
+        flex-direction: column;
+        width: 100%;
+        padding: 20px 0;
+    }
+    .pro-tab {
+        flex-wrap:wrap;
+    }
+
+    .pro-tab a {
+        justify-content: center;
+        align-items: center;
+        width:50px;
+        height:50px;
+        padding:0;
+        border-radius: 50%;
+    }
+
+    .pro-tab a span.text {
+        display:none;
+    }
+    .pro-tab a span.icon {
+        display:block;
+        margin-top:5px;
+    }
+
+    /* modal */
+
+    .modal {
+        width: 95%;
+    }
+
+    #addForm > ul > li {
+        display: flex;
+    }
+
+    #addForm > ul > li > span {
+        white-space: nowrap;
+    }
+
+    #addForm > ul > li:nth-child(2) label{
+        white-space: nowrap;
+    }
 }

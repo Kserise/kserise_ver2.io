@@ -1,20 +1,3 @@
-let body = true;
-$(".toggle").click(function(){
-    $(".toggle").toggleClass("active");
-    $("nav").toggleClass("active");
-    $(".section").toggleClass("transform");
-    if(body == true){
-        body = false;
-        $("body").on('scroll touchmove mousewheel', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-        });
-    }else {
-        body = true;
-        $("body").off('scroll touchmove mousewheel');
-    }
-});
-
 let doindex = 0;
 let width;
 $("#fullpage").fullpage({
@@ -89,14 +72,3 @@ $(".donuts img").click(function(){
     $(".donuts img").removeClass("active");
     $(this).addClass("active");
 });
-
-
-const ani = $(".animation img");
-ani.hide().eq(0).show();
-var currentIndex = 0;
-setInterval(function(){
-    if(currentIndex < 6){
-        currentIndex++;
-    }else { currentIndex = 0; }
-    ani.hide().eq(currentIndex).show();
-}, 500);
