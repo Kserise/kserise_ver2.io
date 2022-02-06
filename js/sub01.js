@@ -11,7 +11,6 @@ $(".submenu > li").click(function(e){
     $(this).toggleClass(SUB01_ACTIVE);
 });
 
-
 function removeHeaderClass(on){
     $(".header > nav").removeClass(SUB01_ACTIVE);
     $(".toggle").removeClass(HEADER_ACTIVE);
@@ -25,10 +24,12 @@ function removeHeaderClass(on){
 let touchStartX, touchEndX;
 const detailBox = $("#detailBox");
 detailBox.on("touchstart", function(e){
+    e.preventDefault();
     touchStartX = e.originalEvent.changedTouches[0].clientX;
     console.log(touchStartX);
 });
 detailBox.on("touchend", function(e){
+    e.preventDefault();
     touchEndX = e.originalEvent.changedTouches[0].clientX;
     if(50 < (touchEndX-touchStartX)){
         $("#detailBox").addClass(SUB01_ACTIVE);
