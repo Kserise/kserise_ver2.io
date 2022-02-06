@@ -31,11 +31,11 @@ touchbody.on("touchstart", function(e){
 });
 touchbody.on("touchend", function(e){
     touchEndX = e.originalEvent.changedTouches[0].clientX;
-    if(50 < (touchEndX-touchStartX)){
+    if(120 < (touchEndX-touchStartX)){
         detailBox.addClass(SUB01_ACTIVE);
         removeHeaderClass("on");
     }
-    if(50 < (touchStartX-touchEndX)){
+    if(120 < (touchStartX-touchEndX)){
         detailBox.removeClass(SUB01_ACTIVE);
         removeHeaderClass();
     }
