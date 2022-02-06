@@ -24,11 +24,12 @@ function removeHeaderClass(on){
 
 let touchStartX, touchEndX;
 const detailBox = $("#detailBox");
-detailBox.on("touchstart", function(e){
+const touchbody = $("body");
+touchbody.on("touchstart", function(e){
     touchStartX = e.originalEvent.changedTouches[0].clientX;
     console.log(touchStartX);
 });
-detailBox.on("touchend", function(e){
+touchbody.on("touchend", function(e){
     touchEndX = e.originalEvent.changedTouches[0].clientX;
     if(50 < (touchEndX-touchStartX)){
         detailBox.addClass(SUB01_ACTIVE);
