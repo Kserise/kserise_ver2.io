@@ -410,6 +410,13 @@ a.addtocart:hover .fa-cart-plus {
     border:2px solid rgb(107, 176, 255);
 }
 
+/* detailBtn */
+
+.detailBtn {
+    display: none;
+}
+
+/* modal */
 
 .modal_bg {
     position:fixed;
@@ -588,6 +595,50 @@ a.addtocart:hover .fa-cart-plus {
         margin-top:5px;
     }
 
+    /* detailBtn */
+    @keyframes detailBtn {
+        0% {
+            opacity:0;
+            transform:translateY(-10px) scale(1.2);
+        }
+        10% {
+            opacity:0.7;
+            transform:translateY(0px) scale(1);
+        }
+        20% {
+            opacity:0.7;
+            transform:translateY(0px) scale(1);
+        }
+        70% {
+            opacity:0.7;
+            transform:translateX(30px);
+        }
+        85% {
+            opacity:0;
+            transform:translateX(30px);
+        }
+        100% {
+            opacity:0;
+            transform:translateX(30px);
+        }
+    }
+    .detailBtn {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position:fixed;
+        left:5px;
+        bottom:15px;
+        width:40px;
+        height:40px;
+        animation:detailBtn 3s infinite;
+        opacity:0;
+    }
+
+    .detailBtn ion-icon {
+        font-size:24px;
+    }
+
     /* modal */
 
     .modal {
@@ -625,8 +676,6 @@ a.addtocart:hover .fa-cart-plus {
     #addForm > ul > li:nth-child(2) input {
         width:auto;
     }
-
-
     .close {
         right:15px;
         top:15px;

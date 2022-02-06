@@ -31,16 +31,17 @@ detailBox.on("touchstart", function(e){
 detailBox.on("touchend", function(e){
     touchEndX = e.originalEvent.changedTouches[0].clientX;
     if(50 < (touchEndX-touchStartX)){
-        $("#detailBox").addClass(SUB01_ACTIVE);
+        detailBox.addClass(SUB01_ACTIVE);
         removeHeaderClass("on");
     }
     if(50 < (touchStartX-touchEndX)){
-        $("#detailBox").removeClass(SUB01_ACTIVE);
+        detailBox.removeClass(SUB01_ACTIVE);
         removeHeaderClass();
     }
     console.log(touchEndX);
 });
 
-$("#detailBtn").click(function(){
+$("#apply").click(function(){
     detailBox.removeClass(SUB01_ACTIVE);
+    removeHeaderClass();
 });
